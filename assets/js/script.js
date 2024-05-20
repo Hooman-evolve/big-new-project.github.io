@@ -73,6 +73,3 @@ navLinks.forEach(link => {
     }, 2000); // Adjust this to match the animation duration
   });
 });
-
-  });
-});
