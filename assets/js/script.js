@@ -61,9 +61,7 @@ document.addEventListener('scroll', function() {
   }
 });
 
-// Light Speed Effect for Navigation Links
-const navLinks = document.querySelectorAll('.sci-fi-nav ul li a');
-
+// Smooth page transition
 navLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
@@ -72,6 +70,9 @@ navLinks.forEach(link => {
     document.body.classList.add('light-speed');
     setTimeout(() => {
       window.location.href = targetUrl;
-    }, 500); // Match this duration with the CSS animation duration
+    }, 2000); // Adjust this to match the animation duration
+  });
+});
+
   });
 });
