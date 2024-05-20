@@ -1,4 +1,5 @@
 // script.js
+// script.js
 
 // Starfield Animation Script
 const canvas = document.getElementById('starfield');
