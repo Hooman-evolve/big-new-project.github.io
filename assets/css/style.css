@@ -4,6 +4,7 @@ body, html {
   padding: 0;
   height: 100%;
   background: #0d0d0d;
+  background-image: src=(assets/images/space_station_1.jpg); /* Change this for each page */
   font-family: 'Arial', sans-serif;
   color: white;
   display: flex;
