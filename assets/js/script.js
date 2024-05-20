@@ -67,7 +67,7 @@ navLinks.forEach(link => {
     e.preventDefault();
     const targetUrl = link.getAttribute('href');
 
-    document.body.classList.add('light-speed');
+    // Add a delay to match the animation duration
     setTimeout(() => {
       window.location.href = targetUrl;
     }, 2000); // Adjust this to match the animation duration
