@@ -1,15 +1,74 @@
-<html>
-    <h1>
-        Hey, I'm NetworkChuck
-    </h1>
-    <body>
-        <h2>About me</h2>
-        <p>
-            I am a coffee addict who makes vidoes sometimes.
-        </p>
-        <h2>What I'm working on</h2>
-        <p>
-            I'm obsessed with AI right now and I'm working on the CPTS from HTB.
-        </p>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Starfield Background</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="starfield"></canvas>
+
+  <script>
+    const canvas = document.getElementById('starfield');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    let stars = [];
+    for (let i = 0; i < 100; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 3,
+        speed: Math.random() * 0.05
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
+        ctx.fillStyle = 'white';
+        ctx.fill();
+      }
+    }
+
+    function updateStars() {
+      for (let star of stars) {
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      }
+    }
+
+    function animate() {
+      drawStars();
+      updateStars();
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+</body>
 </html>
