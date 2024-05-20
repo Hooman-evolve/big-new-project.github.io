@@ -19,7 +19,7 @@ for (let i = 0; i < 100; i++) {
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
     size: Math.random() * 3,
-    speed: Math.random() * 0.05
+    speed: Math.random() * 0.15
   });
 }
 
