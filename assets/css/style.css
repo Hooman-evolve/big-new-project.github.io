@@ -9,17 +9,21 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 /* Sci-Fi Navigation */
 .sci-fi-nav {
   width: 100%;
-  background: linear-gradient(135deg, #00ffcc, #0066ff);
+  background: rgba(0, 0, 0, 0.8);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
   z-index: 1000;
   border-bottom: 2px solid #00ffcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sci-fi-nav ul {
@@ -36,7 +40,7 @@ body, html {
 }
 
 .sci-fi-nav ul li a {
-  color: white;
+  color: #00ffcc;
   text-decoration: none;
   font-size: 18px;
   padding: 10px 20px;
@@ -44,6 +48,8 @@ body, html {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .sci-fi-nav ul li a::before,
@@ -74,7 +80,7 @@ body, html {
 }
 
 .sci-fi-nav ul li a:hover {
-  color: #00ffcc;
+  color: #ffffff;
 }
 
 .sci-fi-nav ul li a::before {
@@ -96,8 +102,25 @@ body, html {
   width: calc(100% + 10px);
 }
 
+/* Sci-Fi Button Animation */
+.sci-fi-nav ul li a:hover::before {
+  animation: border-glow 1s infinite alternate;
+}
+
+@keyframes border-glow {
+  0% {
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
+  }
+  100% {
+    border-color: #0066ff;
+    box-shadow: 0 0 10px #0066ff, 0 0 20px #0066ff, 0 0 30px #0066ff, 0 0 40px #0066ff;
+  }
+}
+
 /* Content Section */
 .content {
   padding: 100px 20px 20px 20px;
   text-align: center;
+  flex: 1;
 }
