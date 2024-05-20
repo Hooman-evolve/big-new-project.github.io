@@ -60,3 +60,18 @@ document.addEventListener('scroll', function() {
     nav.classList.remove('scrolled');
   }
 });
+
+// Light Speed Effect for Navigation Links
+const navLinks = document.querySelectorAll('.sci-fi-nav ul li a');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const targetUrl = link.getAttribute('href');
+
+    document.body.classList.add('light-speed');
+    setTimeout(() => {
+      window.location.href = targetUrl;
+    }, 500); // Match this duration with the CSS animation duration
+  });
+});
