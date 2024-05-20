@@ -118,6 +118,21 @@ body, html {
   }
 }
 
+/* Light Speed Animation */
+@keyframes light-speed {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.light-speed {
+  animation: light-speed 0.5s ease-in-out;
+}
+
 /* Content Section */
 .content {
   padding: 100px 20px 20px 20px;
